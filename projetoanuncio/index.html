@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Anuncio</title>
+</head>
+
+
+<body>
+
+    <h1>Meu Projeto</h1>
+    <p>Descrição do projeto</p>
+    <a href="../portifolio/index.html">VOLTAR</a>
+
+    <main>
+        <div class="item active" style="--background: #EA3D41;">
+            <div class="title">Morango</div>
+            <img src="../projetoanuncio/Morango-refrigerante-foregroundBlur.png" alt="" class="fruit">
+            <img src="../projetoanuncio/Morango-refrigerante.png" alt="" class="refri">
+        </div>
+
+        <div class="item " style="--background: #2d5643;">
+            <div class="title">Abacate</div>
+            <img src="./Abacate-refrigerante-foregroundBlur.png" alt="" class="fruit">
+            <img src="./Abacate-refrigerante.png" alt="" class="refri" >
+        </div>
+
+        <div class="item hidden" style="--background: #EA7043;">
+            <div class="title">Laranja</div>
+            <img src="./Laranja-refrigerante-foregroundBlur.png" alt="" class="fruit" >
+            <img src="./Laranja-refrigerante.png" alt="" class="refri">
+        </div> 
+
+        <div class="arrow">
+            <button id="prev"><</button>
+            <button id="next">></button>
+        </div>
+    </main>
+
+    <script>
+const items = document.querySelectorAll('.item');
+const prevBtn = document.getElementById('prev');
+const nextBtn = document.getElementById('next');
+
+let currentIndex = 0;
+
+// Função para mostrar slide
+function showSlide(index) {
+    items.forEach(item => item.classList.remove('active'));
+    items[index].classList.add('active');
+}
+
+// Próximo
+nextBtn.addEventListener('click', () => {
+    currentIndex++;
+    
+    if (currentIndex >= items.length) {
+        currentIndex = 0; // volta para o primeiro
+    }
+
+    showSlide(currentIndex);
+});
+
+// Anterior
+prevBtn.addEventListener('click', () => {
+    currentIndex--;
+
+    if (currentIndex < 0) {
+        currentIndex = items.length - 1; // vai para o último
+    }
+
+    showSlide(currentIndex);
+});
+</script>
+
+</body>
+</html>

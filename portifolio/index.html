@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css.css">
+    <title>Dev | Gabriel Rocha</title>
+</head>
+
+<body>
+
+    <div class="estrelas"></div>
+
+    <!-- MENU -->
+    <nav class="navegacao">
+        <ul class="menu">
+            <li><a href="#inicio" class="menu-link">Início</a></li>
+            <li><a href="#sobre" class="menu-link">Sobre</a></li>
+            <li><a href="#projetos" class="menu-link">Projetos</a></li>
+            <li><a href="#contatos" class="menu-link">Contato</a></li>
+        </ul>
+    </nav>
+
+    <!-- INÍCIO -->
+    <main id="inicio" class="cabecalho">
+        <img src="./WhatsApp Image 2026-02-20 at 21.01.30.jpeg" alt="Foto Gabriel" class="foto-Gabriel">
+
+        <h1>Gabriel Rocha</h1>
+        <p class="cabecalho-sub-titulo">Desenvolvedor Back-end</p>
+    </main>
+
+    <!-- SOBRE -->
+    <section id="sobre" class="sobre">
+        <h2 class="sobre-titulo">Sobre mim</h2>
+
+        <div class="sobre-caixa">
+            <p class="sobre-paragrafo">
+                Estudante em formação na área de Tecnologia da Informação, com base acadêmica em Desenvolvimento de
+                Sistemas e experiência prática em Suporte Técnico e Atendimento ao Cliente, atuando no diagnóstico e
+                resolução de problemas com foco em eficiência e qualidade.
+                Possuo conhecimentos em Windows Server, Redes de Computadores e boas práticas de TI, além de estar em
+                constante evolução técnica, atualmente aprofundando meus estudos em SQL, Node.js, Python, JavaScript,
+                HTML e CSS, com foco em desenvolvimento e soluções tecnológicas.
+                Também conto com vivência administrativa, perfil ágil, comunicativo e comprometido com resultados. Sou
+                movido por tecnologia, aprendizado contínuo e ambientes colaborativos que promovem crescimento
+                profissional.
+            </p>
+        </div>
+    </section>
+
+    <!-- PROJETOS -->
+    <section id="projetos" class="projetos">
+        <h2 class="projetos-titulo">Meus Projetos</h2>
+
+        <div class="projetos-caixa">
+
+            <div class="projetos-card">
+
+                <a href="/./projetoanuncio/index.html" class="link-projeto">
+                    <img src="../projetoanuncio/Como-Fazer-um-Anúncio-de-Venda-4-passos-para-criar-um-anúncio-ideal.webp"
+                        alt="Projeto Loja de Carros" class="projetos-imagem">
+                </a>
+
+                <h3 class="info-projetos">Anuncio-Frutas</h3>
+                <p class="paragrafo-projetos">
+                    Projeto de site, <b>
+                        JavaScript + CSS + HTMl
+                    </b>.
+                </p>
+
+            </div>
+
+
+            <div class="projetos-card">
+              <a href="../calculadora/index.html" class="link-projeto">
+                    <img src="../projetoanuncio/ba31674f9cff921ccd06d2a2317c991d.png" alt="Projeto Loja de Carros"
+                        class="projetos-imagem">
+                </a>
+
+                <h3 class="info-projetos">calculadora Em python</h3>
+                <p class="paragrafo-projetos">
+                    Projeto de site para concessionária.
+                </p>
+
+            </div>
+            <div class="projetos-card">
+                <a href="http://127.0.0.1:5500/calculadora/index.html" class="link-projeto">
+                    <img src="pngtree-a-luxury-red-car-in-the-road-image_16507119.jpg" alt="Projeto Loja de Carros"
+                        class="projetos-imagem">
+                </a>
+
+                <h3 class="info-projetos">Loja de Carros</h3>
+                <p class="paragrafo-projetos">
+                    Projeto de site para concessionária.
+                </p>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- CONTATO -->
+    <section id="contatos" class="contatos">
+        <h2 class="contatos-titulo">Entre em contato</h2>
+
+        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
+            <input type="text" placeholder="Seu nome" class="campo-form" id="nome">
+
+            <textarea placeholder="Digite sua mensagem" class="text-form" row="4" id="mensagem"></textarea>
+            <button type="submit" class="botao-form">Enviar whatsapp</button>
+        </form>
+    </section>
+
+    <script>
+        function enviarWhats(event) {
+            event.preventDefault()
+            const nome = document.getElementById('nome').value;
+            const mensagem = document.getElementById('mensagem').value;
+            const telefone = '5511945842199'
+
+            const texto = `Ola! me chamo ${nome}, ${mensagem}`
+            const msgFormatada = encodeURIComponent(texto)
+
+            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
+            window.open(url, '_blank')
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>
