@@ -1,19 +1,38 @@
 <!DOCTYPE html>
-<html lang="pt-br">
-
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gabriel Rocha Santos | Desenvolvedor Back-end</title>
+    <meta name="description" content="Portfólio de Gabriel Rocha Santos, desenvolvedor back-end em formação.">
+
+    <!-- Fontes: Orbitron (títulos, estilo game) e Rajdhani (textos) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@600;800&family=Rajdhani:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css.css">
-    <title>Dev | Gabriel Rocha</title>
 </head>
 
-<body>
+<body class="travado">
 
-    <div class="estrelas"></div>
+    <!-- ========== 1. TELA DE ABERTURA (as "portas" que abrem) ========== -->
+    <div id="intro" class="intro">
+        <div class="porta porta-esq"></div>
+        <div class="porta porta-dir"></div>
 
-    <!-- MENU -->
-    <nav class="navegacao">
+        <div class="intro-centro">
+            <p class="intro-nome">GABRIEL ROCHA SANTOS</p>
+            <p class="intro-status" id="introStatus">Carregando... <span id="introPct">0</span>%</p>
+            <div class="intro-barra"><div class="intro-barra-fill" id="introFill"></div></div>
+            <button class="intro-start" id="btnStart" type="button" hidden>Pressione Start</button>
+        </div>
+    </div>
+
+    <!-- ========== 2. FUNDO ANIMADO ========== -->
+    <div class="estrelas" aria-hidden="true"></div>
+
+    <!-- ========== 3. MENU ========== -->
+    <nav class="navegacao" aria-label="Menu principal">
         <ul class="menu">
             <li><a href="#inicio" class="menu-link">Início</a></li>
             <li><a href="#sobre" class="menu-link">Sobre</a></li>
@@ -22,114 +41,154 @@
         </ul>
     </nav>
 
-    <!-- INÍCIO -->
+    <!-- ========== 4. INÍCIO: perfil de personagem ========== -->
     <main id="inicio" class="cabecalho">
-        <img src="./WhatsApp Image 2026-02-20 at 21.01.30.jpeg" alt="Foto Gabriel" class="foto-Gabriel">
+        <div class="perfil">
+            <img src="./WhatsApp Image 2026-07-17 at 22.43.01.jpeg"
+                 alt="Foto de Gabriel Rocha Santos" class="foto-Gabriel">
 
-        <h1>Gabriel Rocha</h1>
-        <p class="cabecalho-sub-titulo">Desenvolvedor Back-end</p>
+            <div class="perfil-info">
+                <p class="perfil-classe">Jogador 1 · Nível 1</p>
+                <h1>Gabriel Rocha Santos</h1>
+                <p class="cabecalho-sub-titulo">Desenvolvedor Back-end em formação</p>
+
+                <!-- Barra de XP: mude a largura em --xp para "subir de nível" -->
+                <div class="xp">
+                    <span>XP</span>
+                    <div class="barra"><div class="barra-fill" style="--nivel:35%"></div></div>
+                </div>
+
+                <a href="#projetos" class="botao-principal">Ver projetos</a>
+            </div>
+        </div>
+
+        <!-- Atributos (skills). Edite o número em --nivel (0% a 100%) -->
+        <ul class="atributos">
+            <li><span class="atributo-nome">Java</span><div class="barra"><div class="barra-fill" style="--nivel:50%"></div></div></li>
+            <li><span class="atributo-nome">Spring Boot</span><div class="barra"><div class="barra-fill" style="--nivel:35%"></div></div></li>
+            <li><span class="atributo-nome">Python</span><div class="barra"><div class="barra-fill" style="--nivel:50%"></div></div></li>
+            <li><span class="atributo-nome">SQL</span><div class="barra"><div class="barra-fill" style="--nivel:45%"></div></div></li>
+            <li><span class="atributo-nome">JavaScript</span><div class="barra"><div class="barra-fill" style="--nivel:45%"></div></div></li>
+            <li><span class="atributo-nome">React Native</span><div class="barra"><div class="barra-fill" style="--nivel:25%"></div></div></li>
+        </ul>
     </main>
 
-    <!-- SOBRE -->
-    <section id="sobre" class="sobre">
-        <h2 class="sobre-titulo">Sobre mim</h2>
+    <!-- ========== 5. SOBRE ========== -->
+    <section id="sobre" class="secao sobre">
+        <h2 class="secao-titulo">Sobre mim</h2>
 
-        <div class="sobre-caixa">
-            <p class="sobre-paragrafo">
-                Estudante em formação na área de Tecnologia da Informação, com base acadêmica em Desenvolvimento de
-                Sistemas e experiência prática em Suporte Técnico e Atendimento ao Cliente, atuando no diagnóstico e
-                resolução de problemas com foco em eficiência e qualidade.
-                Possuo conhecimentos em Windows Server, Redes de Computadores e boas práticas de TI, além de estar em
-                constante evolução técnica, atualmente aprofundando meus estudos em SQL, Node.js, Python, JavaScript,
-                HTML e CSS, com foco em desenvolvimento e soluções tecnológicas.
-                Também conto com vivência administrativa, perfil ágil, comunicativo e comprometido com resultados. Sou
-                movido por tecnologia, aprendizado contínuo e ambientes colaborativos que promovem crescimento
-                profissional.
-            </p>
+        <div class="painel sobre-caixa">
+            <p>Estudante de Análise e Desenvolvimento de Sistemas no Centro Universitário Ítalo-Brasileiro (UniÍtalo) e formado no curso Técnico em Desenvolvimento de Sistemas pelo SENAC.</p>
+            <p>Tenho experiência profissional em Tecnologia, com atuação em Sistemas e Telecomunicações, e venho desenvolvendo conhecimentos em Front-end, JavaScript, Python, Java, SQL e React Native.</p>
+            <p>Gosto de entender como os sistemas são construídos, trabalhar com diferentes tecnologias e resolver problemas do dia a dia. Transformo o aprendizado em prática por meio de projetos.</p>
+            <p>Meu foco atual é evoluir em programação, banco de dados e desenvolvimento web e mobile, construindo uma base sólida para minha carreira em TI.</p>
         </div>
     </section>
 
-    <!-- PROJETOS -->
-    <section id="projetos" class="projetos">
-        <h2 class="projetos-titulo">Meus Projetos</h2>
+    <!-- ========== 6. PROJETOS: cada projeto é uma "fase" ========== -->
+    <section id="projetos" class="secao projetos">
+        <h2 class="secao-titulo">Meus projetos</h2>
 
         <div class="projetos-caixa">
 
-            <div class="projetos-card">
-
-                <a href="/./projetoanuncio/index.html" class="link-projeto">
-                    <img src="../projetoanuncio/Como-Fazer-um-Anúncio-de-Venda-4-passos-para-criar-um-anúncio-ideal.webp"
-                        alt="Projeto Loja de Carros" class="projetos-imagem">
+            <!-- Para adicionar um projeto novo, copie um bloco <article> inteiro -->
+            <article class="projetos-card">
+                <a href="./projetoanuncio/index.html" class="link-projeto">
+                    <img src="./projetoanuncio/Como-Fazer-um-Anúncio-de-Venda-4-passos-para-criar-um-anúncio-ideal.webp"
+                         alt="Projeto Anúncio de Frutas" class="projetos-imagem">
                 </a>
+                <div class="projetos-texto">
+                    <span class="fase">Fase 1 · Concluída</span>
+                    <h3 class="info-projetos">Anúncio de Frutas</h3>
+                    <p class="paragrafo-projetos">Site de anúncio feito com HTML, CSS e JavaScript.</p>
+                </div>
+            </article>
 
-                <h3 class="info-projetos">Anuncio-Frutas</h3>
-                <p class="paragrafo-projetos">
-                    Projeto de site, <b>
-                        JavaScript + CSS + HTMl
-                    </b>.
-                </p>
-
-            </div>
-
-
-            <div class="projetos-card">
-              <a href="../calculadora/index.html" class="link-projeto">
-                    <img src="../projetoanuncio/ba31674f9cff921ccd06d2a2317c991d.png" alt="Projeto Loja de Carros"
-                        class="projetos-imagem">
+            <article class="projetos-card">
+                <a href="./calculadora/index.html" class="link-projeto">
+                    <img src="./projetoanuncio/ba31674f9cff921ccd06d2a2317c991d.png"
+                         alt="Calculadora em Python" class="projetos-imagem">
                 </a>
+                <div class="projetos-texto">
+                    <span class="fase">Fase 2 · Concluída</span>
+                    <h3 class="info-projetos">Calculadora</h3>
+                    <p class="paragrafo-projetos">Calculadora criada para praticar lógica de programação.</p>
+                </div>
+            </article>
 
-                <h3 class="info-projetos">calculadora Em python</h3>
-                <p class="paragrafo-projetos">
-                    Projeto de site para concessionária.
-                </p>
-
-            </div>
-            <div class="projetos-card">
-                <a href="http://127.0.0.1:5500/calculadora/index.html" class="link-projeto">
-                    <img src="pngtree-a-luxury-red-car-in-the-road-image_16507119.jpg" alt="Projeto Loja de Carros"
-                        class="projetos-imagem">
+            <article class="projetos-card">
+                <a href="./lojacarros/index.html" class="link-projeto">
+                    <img src="./pngtree-a-luxury-red-car-in-the-road-image_16507119.jpg"
+                         alt="Projeto Loja de Carros" class="projetos-imagem">
                 </a>
-
-                <h3 class="info-projetos">Loja de Carros</h3>
-                <p class="paragrafo-projetos">
-                    Projeto de site para concessionária.
-                </p>
-
-            </div>
+                <div class="projetos-texto">
+                    <span class="fase">Fase 3 · Em andamento</span>
+                    <h3 class="info-projetos">Loja de Carros</h3>
+                    <p class="paragrafo-projetos">Site para concessionária.</p>
+                </div>
+            </article>
 
         </div>
     </section>
 
-    <!-- CONTATO -->
-    <section id="contatos" class="contatos">
-        <h2 class="contatos-titulo">Entre em contato</h2>
+    <!-- ========== 7. CONTATO ========== -->
+    <section id="contatos" class="secao contatos">
+        <h2 class="secao-titulo">Entre em contato</h2>
 
-        <form class="formulario-contato" id="formulario" onsubmit="enviarWhats(event)">
-            <input type="text" placeholder="Seu nome" class="campo-form" id="nome">
+        <form class="painel formulario-contato" id="formulario">
+            <label for="nome">Seu nome</label>
+            <input type="text" class="campo-form" id="nome" required>
 
-            <textarea placeholder="Digite sua mensagem" class="text-form" row="4" id="mensagem"></textarea>
-            <button type="submit" class="botao-form">Enviar whatsapp</button>
+            <label for="mensagem">Mensagem</label>
+            <textarea class="text-form" rows="4" id="mensagem" required></textarea>
+
+            <button type="submit" class="botao-principal">Enviar pelo WhatsApp</button>
         </form>
     </section>
 
+    <footer class="rodape">© 2026 Gabriel Rocha Santos</footer>
+
+    <!-- ========== JAVASCRIPT ========== -->
     <script>
-        function enviarWhats(event) {
-            event.preventDefault()
-            const nome = document.getElementById('nome').value;
-            const mensagem = document.getElementById('mensagem').value;
-            const telefone = '5511945842199'
+        // --- Abertura: contador de 0 a 100, depois libera o botão Start ---
+        const intro = document.getElementById("intro");
+        const pct = document.getElementById("introPct");
+        const fill = document.getElementById("introFill");
+        const status = document.getElementById("introStatus");
+        const btn = document.getElementById("btnStart");
+        let valor = 0;
 
-            const texto = `Ola! me chamo ${nome}, ${mensagem}`
-            const msgFormatada = encodeURIComponent(texto)
+        const timer = setInterval(() => {
+            valor += Math.ceil(Math.random() * 6);
+            if (valor >= 100) {
+                valor = 100;
+                clearInterval(timer);
+                status.textContent = "Pronto!";
+                btn.hidden = false;
+                btn.focus();
+            }
+            pct.textContent = valor;
+            fill.style.width = valor + "%";
+        }, 90);
 
-            const url = `https://wa.me/${telefone}?text=${msgFormatada}`
-            window.open(url, '_blank')
+        // --- Start: as portas abrem e o site aparece ---
+        function abrir() {
+            intro.classList.add("aberto");
+            document.body.classList.remove("travado");
+            document.body.classList.add("pronto");
+            setTimeout(() => intro.remove(), 1400);
         }
+        btn.addEventListener("click", abrir);
 
-
-
+        // --- Formulário: abre o WhatsApp com a mensagem pronta ---
+        document.getElementById("formulario").addEventListener("submit", (e) => {
+            e.preventDefault();
+            const nome = document.getElementById("nome").value;
+            const mensagem = document.getElementById("mensagem").value;
+            const telefone = "5511945842199";
+            const texto = encodeURIComponent(`Olá! Me chamo ${nome}, ${mensagem}`);
+            window.open(`https://wa.me/${telefone}?text=${texto}`, "_blank");
+        });
     </script>
-
 </body>
-
 </html>
